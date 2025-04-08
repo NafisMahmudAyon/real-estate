@@ -1,11 +1,13 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import { Menu, X, Search } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { Menu, Search, X } from "lucide-react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
 
 const Header = () => {
+  const route = usePathname();
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -48,7 +50,7 @@ const Header = () => {
           className="text-2xl font-semibold tracking-tight flex items-center space-x-2"
         >
           <span className="text-gray-900">Estate</span>
-          <span className="text-gray-500">Haven</span>
+          <span className={route === "/" && !isScrolled ? "text-white" : "text-gray-500"}>Haven</span>
         </Link>
 
         {/* Desktop Navigation */}
@@ -57,7 +59,7 @@ const Header = () => {
             <Link
               key={link.name}
               href={link.href}
-              className="text-gray-600 hover:text-gray-900 font-medium text-sm transition-colors duration-200 relative after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:bg-gray-900 after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300"
+              className={`${route === "/" && !isScrolled ? "text-white" : "text-gray-600"}  hover:text-gray-900 font-medium text-sm transition-colors duration-200 relative after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:bg-gray-900 after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300`}
             >
               {link.name}
             </Link>
@@ -69,7 +71,7 @@ const Header = () => {
             href="/search"
             className="px-3 py-2 text-gray-600 hover:text-gray-900 transition-colors duration-200"
           >
-            <Search size={20} />
+            <Search size={20} className={route === "/" && !isScrolled ? "text-white" : "text-gray-600"} />
           </Link>
           <Link
             href="/#contact"
