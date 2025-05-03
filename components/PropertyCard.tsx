@@ -16,6 +16,8 @@ const PropertyCard = ({ property, className }: PropertyCardProps) => {
   const [isHovered, setIsHovered] = useState(false);
   const [isFavorited, setIsFavorited] = useState(false);
 
+  console.log(isHovered)
+
   return (
     <div
       className={cn(

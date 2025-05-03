@@ -87,15 +87,15 @@ const PropertyList = () => {
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
         >
           {featuredProperties.map((property) => (
-            <div key={property.id} className="opacity-0" style={{ transitionDelay: `${property.id * 100}ms` }}>
+            <div key={property.id} className="" style={{ transitionDelay: `${property.id * 100}ms` }}>
               <PropertyCard property={property} />
             </div>
           ))}
         </div>
 
-        <div className="text-center mt-16 opacity-0 animate-fade-in-up" style={{ animationDelay: "0.8s" }}>
+        <div className="text-center mt-16 animate-fade-in-up" style={{ animationDelay: "0.8s" }}>
           <Link
-            href="/search"
+            href="/properties"
             className="px-8 py-3 bg-gray-900 text-white rounded-md font-medium text-base hover:bg-gray-800 transition-colors duration-300 inline-flex items-center"
           >
             View All Properties

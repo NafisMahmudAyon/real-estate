@@ -190,7 +190,7 @@ const PropertyDetailPage = () => {
                       className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-400"
                     ></textarea>
                   </div>
-                  <Button className="w-full bg-gray-900 hover:bg-gray-800" size="lg">
+                  <Button className="w-full bg-gray-900 hover:bg-gray-800 text-white" size="lg">
                     Contact Agent
                   </Button>
                 </form>
